@@ -1,0 +1,66 @@
+.search-div {
+    background-color: bisque;
+    margin-left: 20px;
+    margin-top: 20px;
+    padding: 10px;
+    border: 2px solid tan;
+    border-radius: 5px;
+    width: fit-content;
+
+}
+
+
+
+.text-in {
+    margin-bottom: 10px;
+}
+
+.search-div input {
+    border: 2px solid tan;
+    width: 473px;
+    margin-right: 0px;
+    border-radius: 5px;
+    font-size: large;
+    transition: ease-in-out 0.05s;
+}
+
+.search-div input:focus {
+    border: 2px solid bisque;
+}
+
+.search-div input:active {
+    border: 2px solid bisque;
+}
+
+.search-div input:hover {
+    border: 2px solid rgb(35, 84, 246);
+}
+
+.filters select {
+    font-size: medium;
+    margin-left: 10px;
+    margin-right: 20px;
+    border: 2px solid tan;
+    border-radius: 5px;
+    transition: ease-in-out 0.05s;
+}
+
+.filters select:hover {
+    border: 2px solid rgb(35, 84, 246);
+    cursor: pointer;
+}
+
+.filters button {
+    background-color: white;
+    border: 2px solid tan;
+    border-radius: 5px;
+    font-size: large;
+    transition: 0.1s ease-in-out;
+    margin-right: 0px;
+}
+
+.filters button:hover {
+    border: 2px solid rgb(35, 84, 246);
+
+    cursor: pointer;
+}

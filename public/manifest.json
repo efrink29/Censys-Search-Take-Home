@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Censys API Demo",
+  "name": "Take Home Assesment Censys API IPv4 Hosts",
   "icons": [
     {
       "src": "favicon.ico",
