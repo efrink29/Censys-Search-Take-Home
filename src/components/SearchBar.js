@@ -39,19 +39,19 @@ function SearchBar(props) {
     }
 
     return (
-        <div className="search-div">
+        <div className="search-div" data-testid="search-bar">
             <div className="text-in">
                 <input type="text" placeholder="Enter Plaintext Query" value={query} onChange={handleQueryChange}></input>
             </div>
             <div className="filters">
                 Virtual Hosts?
-                <select id="virtual_hosts" name="Include Virtual Hosts" value={virtualHosts} onChange={handleVirtualHostsChange}>
+                <select id="virtual_hosts" name="Include Virtual Hosts" value={virtualHosts} onChange={handleVirtualHostsChange} data-testid="virtual-hosts">
                     <option value="EXCLUDE">Exclude</option>
                     <option value="INCLUDE">Include</option>
                     <option value="ONLY">Only</option>
                 </select>
                 Sort By:
-                <select id="sort" name="Sort By" value={sort} onChange={handleSortChange}>
+                <select id="sort" name="Sort By" value={sort} onChange={handleSortChange} data-testid="sort-by">
                     <option value="RELEVANCE">Relevance</option>
                     <option value="ASCENDING">Ascending</option>
                     <option value="DESCENDING">Descending</option>

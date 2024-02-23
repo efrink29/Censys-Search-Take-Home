@@ -2,11 +2,11 @@ import './styles/Cursor.css'
 
 export default function Cursors(props) {
 
-    const prev = props.cursors[0];
-    const next = props.cursors[1];
+    const prev = props.pageState.cursors.prev;
+    const next = props.pageState.cursors.next;
 
-    const currParams = props.currParams;
-    const currPageNum = props.pageNum;
+    const currParams = props.pageState.currParams;
+    const currPageNum = props.pageState.pageNum;
 
     var prevButton = <></>
     var nextButton = <></>
@@ -47,7 +47,7 @@ export default function Cursors(props) {
     }
 
     return (
-        <div className="cursor-div">
+        <div className="cursor-div" data-testid="cursors">
             {prevButton}
             {nextButton}
         </div>
