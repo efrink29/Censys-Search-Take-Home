@@ -8,8 +8,16 @@ function Cursors(props) {
     const currParams = props.pageState.search_params;
     const currPageNum = props.pageState.pageNum;
 
+    // Check if prev and next cursors are present otherwise adds empty tag (no button)
     var prevButton = <></>
     var nextButton = <></>
+
+    if (prev.length !== 0) {
+        prevButton = <button onClick={getPrev}>Previous</button>
+    }
+    if (next.length !== 0) {
+        nextButton = <button onClick={getNext}>Next</button>
+    }
 
     function getPrev() {
         var params = {
@@ -39,12 +47,7 @@ function Cursors(props) {
         props.searchFunc(params, currPageNum + 1)
     }
 
-    if (prev.length !== 0) {
-        prevButton = <button onClick={getPrev}>Previous</button>
-    }
-    if (next.length !== 0) {
-        nextButton = <button onClick={getNext}>Next</button>
-    }
+    
 
     return (
         <div className="cursor-div" data-testid="cursors">
