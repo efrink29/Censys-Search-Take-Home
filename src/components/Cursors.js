@@ -5,7 +5,7 @@ export default function Cursors(props) {
     const prev = props.pageState.cursors.prev;
     const next = props.pageState.cursors.next;
 
-    const currParams = props.pageState.currParams;
+    const currParams = props.pageState.search_params;
     const currPageNum = props.pageState.pageNum;
 
     var prevButton = <></>

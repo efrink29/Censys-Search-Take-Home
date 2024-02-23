@@ -121,7 +121,7 @@ describe('Cursors Component', () => {
     const props = {
       pageState: {
         cursors: { prev: '', next: '' },
-        currParams: {},
+        search_params: {},
         pageNum: 1
       },
       searchFunc: jest.fn()
@@ -136,7 +136,7 @@ describe('Cursors Component', () => {
     const props = {
       pageState: {
         cursors: { prev: 'prevCursor', next: '' },
-        currParams: {},
+        search_params: {},
         pageNum: 2
       },
       searchFunc: jest.fn()
@@ -151,7 +151,7 @@ describe('Cursors Component', () => {
     const props = {
       pageState: {
         cursors: { prev: '', next: 'nextCursor' },
-        currParams: {},
+        search_params: {},
         pageNum: 1
       },
       searchFunc: jest.fn()
@@ -166,7 +166,7 @@ describe('Cursors Component', () => {
     const props = {
       pageState: {
         cursors: { prev: '', next: 'nextCursor' },
-        currParams: { q: 'test', per_page: 10 },
+        search_params: { q: 'test', per_page: 10 },
         pageNum: 1
       },
       searchFunc: jest.fn()
@@ -177,8 +177,8 @@ describe('Cursors Component', () => {
     expect(props.searchFunc).toHaveBeenCalledWith({
       q: 'test',
       per_page: 10,
-      virtual_hosts: props.pageState.currParams.virtual_hosts,
-      sort: props.pageState.currParams.sort,
+      virtual_hosts: props.pageState.search_params.virtual_hosts,
+      sort: props.pageState.search_params.sort,
       cursor: 'nextCursor'
     }, 2);
   });
@@ -187,7 +187,7 @@ describe('Cursors Component', () => {
     const props = {
       pageState: {
         cursors: { prev: 'prevCursor', next: 'nextCursor' },
-        currParams: { q: 'test', per_page: 10 },
+        search_params: { q: 'test', per_page: 10 },
         pageNum: 1
       },
       searchFunc: jest.fn()
@@ -198,8 +198,8 @@ describe('Cursors Component', () => {
     expect(props.searchFunc).toHaveBeenCalledWith({
       q: 'test',
       per_page: 10,
-      virtual_hosts: props.pageState.currParams.virtual_hosts,
-      sort: props.pageState.currParams.sort,
+      virtual_hosts: props.pageState.search_params.virtual_hosts,
+      sort: props.pageState.search_params.sort,
       cursor: '' // Should revert to page 0 i.e. no cursor
     }, 0);
   });
@@ -207,7 +207,7 @@ describe('Cursors Component', () => {
     const props = {
       pageState: {
         cursors: { prev: 'prevCursor', next: 'nextCursor' },
-        currParams: { q: 'test', per_page: 10 },
+        search_params: { q: 'test', per_page: 10 },
         pageNum: 2
       },
       searchFunc: jest.fn()
@@ -218,8 +218,8 @@ describe('Cursors Component', () => {
     expect(props.searchFunc).toHaveBeenCalledWith({
       q: 'test',
       per_page: 10,
-      virtual_hosts: props.pageState.currParams.virtual_hosts,
-      sort: props.pageState.currParams.sort,
+      virtual_hosts: props.pageState.search_params.virtual_hosts,
+      sort: props.pageState.search_params.sort,
       cursor: 'prevCursor'
     }, 1);
   });
