@@ -15,35 +15,26 @@ I combined all elements into a single state hook for clarity and performance.
 
 ### Running this tool
 
-In order to run this tool you must provide a valid APIID and Secret from a Censys account. These are stored in the .env file for security. 
-**.env IS NOT SUPPOSED TO BE INCLUDE IN A PUBLIC GITHUB REPO** - I included mine here as an example but its not something I would normally ever do. The secret key listed will be reset so if you are having authentication issues try using your own keys locally or email me with any concerns efrink29@gmail.com.\
-
 **Clone Repo** - Clone using gh cli or https\
-**install packages** - Run 'npm install' in root of cloned repo to install dependencies and 'node-modules' \
-**npm run start** - Starts development server at localhost:3000 (see below) 
+**install packages** - Run 'npm install' in root of cloned repo to install dependencies and 'node-modules' 
 
-## Available Scripts
+#### Authentication
+In order to run this tool you must provide a valid APIID and Secret from a Censys account. \
+Update the .env file with your ID and Secret following the example.\
+**.env IS NOT SUPPOSED TO BE INCLUDE IN A PUBLIC GITHUB REPO** - I included mine here as an example but its not something I would normally ever do.
 
-In the project directory, you can run:
+#### Running development server
 
-### `npm start`
+**npm start** - Starts development server at localhost:3000 (see below) 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+#### Running tests 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**npm test** - Runs test script defined in App.test.js
 
-### `npm test`
+#### Build For Production 
 
-Launches the test runner in the interactive watch mode.\
-**TESTS ARE NOT COMPREHENSIVE** - The tests I have here only cover surface level functionality and serve as a foundation for more comprehensive tests to be added.
+**npm run build** - Runs default react build tools to process for production environment
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
 
 
