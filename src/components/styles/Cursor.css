@@ -1,0 +1,21 @@
+.cursor-div {
+    margin-bottom: 20px;
+    margin-left: 20px;
+    align-self: center;
+}
+
+.cursor-div button {
+    background-color: white;
+    border: 2px solid tan;
+    border-radius: 5px;
+    font-size: large;
+    transition: 0.1s ease-in-out;
+    margin-right: 0px;
+    width: 90px;
+}
+
+.cursor-div button:hover {
+    border: 2px solid rgb(35, 84, 246);
+
+    cursor: pointer;
+}
