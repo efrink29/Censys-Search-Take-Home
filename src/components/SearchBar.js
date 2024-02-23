@@ -1,11 +1,13 @@
 import React, { useState } from 'react'; // Import React and useState hook
 import './styles/SearchBar.css';
 
-function SearchBar(searchFunct) {
+function SearchBar(props) {
     // Initialize state for query, virtual_hosts, and sort
     const [query, setQuery] = useState('');
     const [virtualHosts, setVirtualHosts] = useState('EXCLUDE');
     const [sort, setSort] = useState('RELEVANCE');
+
+    const currParams = props.currParams
 
     // Event handler for updating state when the query input changes
     const handleQueryChange = (event) => {
@@ -26,14 +28,15 @@ function SearchBar(searchFunct) {
     const handleSearchClick = () => {
         // Construct the params object with the updated state values
         const params = {
-            query: query,
+            q: query,
+            per_page: currParams.per_page,
             virtual_hosts: virtualHosts,
-            sort: sort
+            sort: sort,
+            cursor: ""
         };
 
-        // Call the provided search function with the params object
-        searchFunct(params);
-    };
+        props.searchFunc(params, 0)
+    }
 
     return (
         <div className="search-div">
@@ -45,6 +48,7 @@ function SearchBar(searchFunct) {
                 <select id="virtual_hosts" name="Include Virtual Hosts" value={virtualHosts} onChange={handleVirtualHostsChange}>
                     <option value="EXCLUDE">Exclude</option>
                     <option value="INCLUDE">Include</option>
+                    <option value="ONLY">Only</option>
                 </select>
                 Sort By:
                 <select id="sort" name="Sort By" value={sort} onChange={handleSortChange}>
