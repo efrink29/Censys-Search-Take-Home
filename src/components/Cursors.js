@@ -1,6 +1,6 @@
 import './styles/Cursor.css'
 
-export default function Cursors(props) {
+function Cursors(props) {
 
     const prev = props.pageState.cursors.prev;
     const next = props.pageState.cursors.next;
@@ -53,3 +53,5 @@ export default function Cursors(props) {
         </div>
     );
 }
+
+export default Cursors;
